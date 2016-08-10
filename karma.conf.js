@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     preprocessors: {
       // add webpack as preprocessor
-      'src/**/*.js': ['webpack', 'sourcemap'],
+      'src/**/*.js': ['webpack', 'sourcemap', 'coverage'],
       'test/**/*.js': ['webpack', 'sourcemap']
     },
 
@@ -62,6 +62,7 @@ module.exports = function(config) {
     plugins: [
       'karma-webpack',
       'karma-jasmine',
+      'karma-coverage',
       'karma-sourcemap-loader',
       'karma-chrome-launcher',
       'karma-phantomjs-launcher'
@@ -73,7 +74,12 @@ module.exports = function(config) {
         presets: ['airbnb']
       }
     },
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage/',
+      file: 'coverage.txt'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
