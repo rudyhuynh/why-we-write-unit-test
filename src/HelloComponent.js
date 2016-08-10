@@ -11,7 +11,7 @@ class HelloComponent extends Component {
   }
   onClickHello(){
     this.setState({
-      helloText: 'Hello Nhựt!'
+      helloText: 'Hello Nhựt'
     })
   }
   onClickRefresh(){
