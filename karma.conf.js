@@ -63,6 +63,7 @@ module.exports = function(config) {
       'karma-webpack',
       'karma-jasmine',
       'karma-coverage',
+      'karma-coveralls',
       'karma-sourcemap-loader',
       'karma-chrome-launcher',
       'karma-phantomjs-launcher'
@@ -74,11 +75,10 @@ module.exports = function(config) {
         presets: ['airbnb']
       }
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'coveralls'],
     coverageReporter: {
       type: 'lcov',
-      dir: 'coverage/',
-      file: 'coverage.txt'
+      dir: 'coverage/'
     },
     port: 9876,
     colors: true,
